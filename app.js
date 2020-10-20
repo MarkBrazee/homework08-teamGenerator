@@ -90,7 +90,121 @@ const questions = [ {
 
 }];
 
+// function to write to file
+function writeToFile(fileName, data) {
+    fs.writeFileSync(fileName, data)
+} 
+
 // create objects for each team member
+
 // The application will prompt the user for information about the team manager
 
+function init() {
+    inquirer.prompt(questions)
+    // if team manager
+    .then(({
+            name, role, idNum, email, offNum,
+    }) => {
+        const managerinfo = `
+        
+# Name: ${name}
+        
+## Role: ${role}
 
+### ID number: ${idNum}
+        
+### Email: ${email}
+
+### Office Number: ${offNum}
+
+`
+    writeToFile("manager.html", managerinfo )
+    
+})
+
+    //if engineer
+    .then(({
+        name, role, idNum, email, gitHub,
+    }) => {
+
+        const info = `
+        
+# Name: ${name}
+        
+## Role: ${role}
+
+### ID number: ${idNum}
+        
+### Email: ${email}
+
+### GitHub : ${gitHub}
+
+`
+    writeToFile("engineer.html", engineerinfo )
+    
+})
+
+    //if intern
+    .then(({
+        name, role, idNum, email, school,
+    }) => {
+
+        const interninfo = `
+        
+# Name: ${name}
+        
+## Role: ${role}
+
+### ID number: ${idNum}
+        
+### Email: ${email}
+
+### School : ${school}
+
+`
+    writeToFile("intern.html", interninfo )
+    })
+
+    //if all employees
+    .then(({
+        name, role, idNum, email, offNum, gitHub, school,
+    }) => {
+    
+    const maininfo = `
+            
+# Name: ${name}
+            
+## Role: ${role}
+    
+### ID number: ${idNum}
+            
+### Email: ${email}
+
+### Office Number: ${offNum}
+
+### GitHub: ${gitHub}
+    
+### School : ${school}
+    
+`
+    writeToFile("main.html", maininfo )
+    })
+}
+
+
+// function call to initialize program
+init();
+
+
+
+
+
+
+
+
+
+
+
+
+// function call to initialize program
+init();
