@@ -90,110 +90,35 @@ const questions = [ {
 
 }];
 
+// create objects for all employees
+
+function Employees(name, role, id, email, offNum, school, gitHub) {
+    this.name = name;
+    this.role = role;
+    this.id = id;
+    this.email = email;
+    this.offNum = offNum;
+    this.school = school;
+    this.gitHub = gitHub;
+}
+
+Employees.prototype.printStats = function() {
+    console.log("Name: " + this.name + "Role: " + this.role + "Id: " + this.id + "Email: " + this.email + "Office number: " + this.offNum + "School: " + this.school + "GitHub: " + this.gitHub);
+
+    console.log("\n---------\n");
+};
+
+
 // function to write to file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data)
 } 
 
-// create objects for each team member
-
-// The application will prompt the user for information about the team manager
-
 function init() {
     inquirer.prompt(questions)
-
-    if (role === manager);
-    .then(({
-            name, role, id, email, offNum,
-    }) => {
-        const Manager = `
-        
-# Name: ${name}
-        
-## Role: ${role}
-
-### ID number: ${id}
-        
-### Email: ${email}
-
-### Office Number: ${offNum}
-
-`
-    writeToFile("manager.html", Manager )
-    
-})
-
-// The application will prompt the user for information about the engineer(s)
-
-    if (role === engineer);
-    .then(({
-        name, role, id, email, gitHub,
-    }) => {
-
-        const Engineer = `
-        
-# Name: ${name}
-        
-## Role: ${role}
-
-### ID number: ${id}
-        
-### Email: ${email}
-
-### GitHub : ${gitHub}
-
-`
-    writeToFile("engineer.html", Engineer )
-    
-})
-
-// The application will prompt the user for information about the intern(s)
-
-    if (role === intern);
-    .then(({
-        name, role, id, email, school,
-    }) => {
-
-        const Intern = `
-        
-# Name: ${name}
-        
-## Role: ${role}
-
-### ID number: ${id}
-        
-### Email: ${email}
-
-### School : ${school}
-
-`
-    writeToFile("intern.html", Intern )
-    })
-
-    .then(({
-        name, role, id, email, offNum, gitHub, school,
-    }) => {
-    
-    const Employee = `
-            
-# Name: ${name}
-            
-## Role: ${role}
-    
-### ID number: ${id}
-            
-### Email: ${email}
-
-### Office Number: ${offNum}
-
-### GitHub: ${gitHub}
-    
-### School : ${school}
-    
-`
-    writeToFile("main.html", Employee )
-    })
 }
+
+
 
 
 // function call to initialize program

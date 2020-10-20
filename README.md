@@ -1,29 +1,26 @@
 
-# Project Name: Project Team Generator
+# Project Name: Team Generator
 
 ### Description of the Project: 
 
-(pending)
+description pending
 
 ### Installation instructions: 
 
-(pending)
+installation instructions pending
 
 ### Usage instructions: 
 
-(pending)
+Usage instrcutions pending
 
 ### Contribution instructions: 
 
-(pending)
+Contribution instructions pending
 
 ### Test instructions: 
 
-(pending)
+Test pending
 
-### Link to Usage Video:
-
-http://www.github.com/MarkBrazee/homework07/blob/main/video.gif
 
 ### Questions? 
 
