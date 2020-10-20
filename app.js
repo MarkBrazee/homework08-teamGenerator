@@ -10,7 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-// Adding info for second push
+
 
 
 // Write code to use inquirer to gather information about the development team members,
@@ -35,3 +35,62 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+
+
+
+
+// Write code to use inquirer to gather information about the development team members,
+// create objects for each team member
+
+// Array of questions
+    // Name
+    // Role
+    // ID number
+    // email
+    // office number
+    // school
+    // GitHub name
+
+const questions = [ {
+
+    type: "input",
+    message: "What is name?",
+    name: "name",
+    },
+{
+    type: "input",
+    message: "What is role?",
+    name: "role",
+    },
+{
+    type: "input",
+    message: "What is your ID number?",
+    name: "idNum",
+    },
+{
+    type: "input",
+    message: "What is your email?",
+    name: "email",
+    },
+{
+    type: "input",
+    message: "What is your office number?",
+    name: "offNum",
+    },
+{
+    type: "input",
+    message: "What school did you attend?",
+    name: "school",
+    },
+{
+    type: "input",
+    message: "What is your GitHub name?",
+    name: "gitHub",
+
+}];
+
+// create objects for each team member
+// The application will prompt the user for information about the team manager
+
+
