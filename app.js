@@ -90,7 +90,7 @@ const questions = [ {
 
 }];
 
-// create objects for all employees
+// create object for all employees
 
 function Employees(name, role, id, email, offNum, school, gitHub) {
     this.name = name;
@@ -105,7 +105,6 @@ function Employees(name, role, id, email, offNum, school, gitHub) {
 Employees.prototype.printStats = function() {
     console.log("Name: " + this.name + "Role: " + this.role + "Id: " + this.id + "Email: " + this.email + "Office number: " + this.offNum + "School: " + this.school + "GitHub: " + this.gitHub);
 
-    console.log("\n---------\n");
 };
 
 
