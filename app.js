@@ -101,11 +101,12 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer.prompt(questions)
-    // if team manager
+
+    if (role === manager);
     .then(({
             name, role, idNum, email, offNum,
     }) => {
-        const managerinfo = `
+        const Manager = `
         
 # Name: ${name}
         
@@ -118,16 +119,16 @@ function init() {
 ### Office Number: ${offNum}
 
 `
-    writeToFile("manager.html", managerinfo )
+    writeToFile("manager.html", Manager )
     
 })
 
-    //if engineer
+    if (role === engineer);
     .then(({
         name, role, idNum, email, gitHub,
     }) => {
 
-        const info = `
+        const Engineer = `
         
 # Name: ${name}
         
@@ -140,16 +141,16 @@ function init() {
 ### GitHub : ${gitHub}
 
 `
-    writeToFile("engineer.html", engineerinfo )
+    writeToFile("engineer.html", Engineer )
     
 })
 
-    //if intern
+    if (role === intern);
     .then(({
         name, role, idNum, email, school,
     }) => {
 
-        const interninfo = `
+        const Intern = `
         
 # Name: ${name}
         
@@ -162,15 +163,14 @@ function init() {
 ### School : ${school}
 
 `
-    writeToFile("intern.html", interninfo )
+    writeToFile("intern.html", Intern )
     })
 
-    //if all employees
     .then(({
         name, role, idNum, email, offNum, gitHub, school,
     }) => {
     
-    const maininfo = `
+    const Employee = `
             
 # Name: ${name}
             
@@ -187,7 +187,7 @@ function init() {
 ### School : ${school}
     
 `
-    writeToFile("main.html", maininfo )
+    writeToFile("main.html", Employee )
     })
 }
 
