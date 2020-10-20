@@ -21,10 +21,6 @@
 
 (pending)
 
-### Link to Usage Video:
-
-http://www.github.com/MarkBrazee/homework07/blob/main/video.gif
-
 ### Questions? 
 
 Contact Mark Brazee at: m.brazee@comcast.net or at github.com/MarkBrazee
