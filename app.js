@@ -66,7 +66,7 @@ const questions = [ {
 {
     type: "input",
     message: "What is your ID number?",
-    name: "idNum",
+    name: "id",
     },
 {
     type: "input",
@@ -104,7 +104,7 @@ function init() {
 
     if (role === manager);
     .then(({
-            name, role, idNum, email, offNum,
+            name, role, id, email, offNum,
     }) => {
         const Manager = `
         
@@ -112,7 +112,7 @@ function init() {
         
 ## Role: ${role}
 
-### ID number: ${idNum}
+### ID number: ${id}
         
 ### Email: ${email}
 
@@ -123,9 +123,11 @@ function init() {
     
 })
 
+// The application will prompt the user for information about the engineer(s)
+
     if (role === engineer);
     .then(({
-        name, role, idNum, email, gitHub,
+        name, role, id, email, gitHub,
     }) => {
 
         const Engineer = `
@@ -134,7 +136,7 @@ function init() {
         
 ## Role: ${role}
 
-### ID number: ${idNum}
+### ID number: ${id}
         
 ### Email: ${email}
 
@@ -145,9 +147,11 @@ function init() {
     
 })
 
+// The application will prompt the user for information about the intern(s)
+
     if (role === intern);
     .then(({
-        name, role, idNum, email, school,
+        name, role, id, email, school,
     }) => {
 
         const Intern = `
@@ -156,7 +160,7 @@ function init() {
         
 ## Role: ${role}
 
-### ID number: ${idNum}
+### ID number: ${id}
         
 ### Email: ${email}
 
@@ -167,7 +171,7 @@ function init() {
     })
 
     .then(({
-        name, role, idNum, email, offNum, gitHub, school,
+        name, role, id, email, offNum, gitHub, school,
     }) => {
     
     const Employee = `
@@ -176,7 +180,7 @@ function init() {
             
 ## Role: ${role}
     
-### ID number: ${idNum}
+### ID number: ${id}
             
 ### Email: ${email}
 
@@ -190,20 +194,6 @@ function init() {
     writeToFile("main.html", Employee )
     })
 }
-
-
-// function call to initialize program
-init();
-
-
-
-
-
-
-
-
-
-
 
 
 // function call to initialize program
