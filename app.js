@@ -54,67 +54,100 @@ const render = require("./lib/htmlRenderer");
 
 const questions = [ {
 
-    type: "input",
-    message: "What is name?",
-    name: "name",
+        type: "input",
+        message: "What is name?",
+        name: "name",
+        },
+    {
+        type: "input",
+        message: "What is role?",
+        name: "role",
+        },
+    {
+        type: "input",
+        message: "What is your ID number?",
+        name: "id",
+        },
+    {
+        type: "input",
+        message: "What is your email?",
+        name: "email",
+        },
+    {
+        message: "What typpe of employee are you?",
+        type: 'list',
+        choices: [
+            "Engineer",
+            "Manager",
+            "Intern"
+        ],
+        name: "type"
     },
-{
-    type: "input",
-    message: "What is role?",
-    name: "role",
+    {
+        type: "input",
+        message: "What is your office number?",
+        name: "offNum",
+        when: ({
+            type
+        }) => type === "Manager"
     },
-{
-    type: "input",
-    message: "What is your ID number?",
-    name: "id",
+    {
+        type: "input",
+        message: "What school did you attend?",
+        name: "school",
+        when: ({
+            type
+        }) => type === "Intern"
     },
-{
-    type: "input",
-    message: "What is your email?",
-    name: "email",
-    },
-{
-    type: "input",
-    message: "What is your office number?",
-    name: "offNum",
-    },
-{
-    type: "input",
-    message: "What school did you attend?",
-    name: "school",
-    },
-{
-    type: "input",
-    message: "What is your GitHub name?",
-    name: "gitHub",
-
-}];
+    {
+        type: "input",
+        message: "What is your GitHub name?",
+        name: "gitHub",
+        when: ({
+            type
+        }) => type === "Engineer"
+    }
+];
 
 // create object for all employees
-
-function Employees(name, role, id, email, offNum, school, gitHub) {
-    this.name = name;
-    this.role = role;
-    this.id = id;
-    this.email = email;
-    this.offNum = offNum;
-    this.school = school;
-    this.gitHub = gitHub;
-}
-
-Employees.prototype.printStats = function() {
-    console.log("Name: " + this.name + "Role: " + this.role + "Id: " + this.id + "Email: " + this.email + "Office number: " + this.offNum + "School: " + this.school + "GitHub: " + this.gitHub);
-
-};
-
 
 // function to write to file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data)
 } 
 
+// create object for all employees
+
 function init() {
     inquirer.prompt(questions)
+    .then(({
+        name,
+        role,
+        id,
+        email,
+        offNum,
+        school,
+        gitHub,
+        type,
+    }) => {
+
+        console.log(name, role, id, email)
+
+        switch (type) {
+            case "Engineer":
+                const engineer = new Engineer
+                (name, role, id, email, gitHub)
+                break;
+            case "Manager":
+                const manager = new Manager
+                (name, role, id, email, offNum)
+                break;
+            case "Intern":
+                const intern = new Intern
+                (name, role, id, email, school)
+                break;
+        }
+    })
 }
 
 
