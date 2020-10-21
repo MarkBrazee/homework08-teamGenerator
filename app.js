@@ -116,7 +116,6 @@ function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data)
 } 
 
-// create object for all employees
 
 function init() {
     inquirer.prompt(questions)
@@ -149,9 +148,6 @@ function init() {
         }
     })
 }
-
-
-
 
 // function call to initialize program
 init();
